@@ -3,9 +3,9 @@ const Schema = mongoose.Schema;
 
 const Infor = new Schema({
     Ten : {type :String, maxLength :255},
-    Gioi_tinh : {type :String},
-    Ngay_sinh : {type :Date},
-    Dia_chi : {type :String}
+    Gioitinh : {type :String},
+    Ngaysinh : {type :Date},
+    Diachi : {type :String}
 
 });
 
