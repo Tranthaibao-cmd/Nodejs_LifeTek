@@ -1,9 +1,9 @@
 const studencontroller = require('../controllers/Student');
 
 function route(app){
-    app.get('/', studencontroller.index);
+    app.get('/user',studencontroller.index);
       
-    app.get('/:Ten', studencontroller.Detail);
+    app.get('/user/:Ten', studencontroller.Detail);
       
     app.post('/Add',studencontroller.Add);
 

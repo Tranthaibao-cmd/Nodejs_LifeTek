@@ -1,10 +1,21 @@
 const express = require('express');
 const db = require('./app/configs/db');
 const routes = require ('./app/routes/student');
+const handlebars = require('express-handlebars');
+//const hbs = require('hbs');
+const path = require('path');
+
+
+const app = express();
+app.engine('hbs', handlebars.engine({
+    extname :'.hbs'
+}));
+app.set('view engine', 'hbs');
+// hbs.registerHelper('dateFormat', require('handlebars-dateformat'));
+app.set('views',path.join(__dirname, './app/resources/views'));
 
 db.connect();
 
-const app = express();
 app.use(express.json());
 
 routes(app);

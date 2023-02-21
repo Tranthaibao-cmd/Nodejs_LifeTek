@@ -1,0 +1,28 @@
+<table class="table mt-4 " style="text-align: center;">
+  <thead>
+    <tr>
+      <th scope="col">Index</th>
+      <th scope="col">Name</th>
+      <th scope="col">Male</th>
+      <th scope="col">Adress</th>
+      <th scope="col">Details</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    {{#each Infor}}
+    <tr>
+      <th scope="row">1</th>
+      <td>{{this.Ten}}</td>
+      <td>{{this.Gioitinh}}</td>
+      <td>{{this.Diachi }}</td>
+      <td>
+        <button type="button" class="btn btn-link" >
+          <a href="/user/{{this.Ten}}">Detals</a> 
+        </button>
+      </td>
+    </tr>
+    
+    {{/each}}
+  </tbody>
+</table>
