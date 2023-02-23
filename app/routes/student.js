@@ -1,14 +1,15 @@
 const studencontroller = require('../controllers/Student');
+var express = require('express');
+const router = express.Router();
 
-function route(app){
-    app.get('/user',studencontroller.index);
+    router.get('/',studencontroller.index);
       
-    app.get('/user/:Ten', studencontroller.Detail);
+    router.get('/user/:Ten', studencontroller.Detail);
       
-    app.post('/Add',studencontroller.Add);
+    router.post('/Add',studencontroller.Add);
 
-    app.put('/Edit/:id',studencontroller.Update);
+    router.put('/Edit/:id',studencontroller.Update);
 
-    app.delete('/Delete/:id',studencontroller.Delete);
-}
-module.exports= route;
+    router.delete('/Delete/:id',studencontroller.Delete);
+
+module.exports= router;
