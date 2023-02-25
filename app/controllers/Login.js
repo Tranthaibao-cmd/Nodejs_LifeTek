@@ -30,9 +30,18 @@ class LoginController {
         try{
             var token = req.Cookies.token
             var ketqua =jwt.verify(token,'pass');
-            if(ketqua){
-                next();
-            }
+            account.findOne({
+                _id : ketqua
+            }).then(data => {
+                req.data =data;
+                if(data)
+                {
+                    next();
+                }
+                else{
+                    res.json('not permisson')
+                }
+            })
         }
         catch(err) {
             return res.redirect('/login');
